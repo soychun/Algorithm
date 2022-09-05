@@ -17,6 +17,7 @@ def dfs(x,y):
     if x<0 or x>=n or y<0 or y>=n:
         return False
     if g[x][y]==1:
+        print(x,y)
         g[x][y]=0
         global cnt
         cnt +=1
