@@ -36,3 +36,11 @@ print(b)  # abc
 import sys
 sys.setrecursionlimit(10**9)
 input = sys.stdin.readline
+
+# sort
+a = [(2,1,3),(1,3,3),(3,3,4),(1,1,3)]
+print(sorted(a,key=lambda x: (-x[2],-x[0],-x[1])))   # [(3, 3, 4), (2, 1, 3), (1, 3, 3), (1, 1, 3)]
+# 첫번째 인자를 기분으로 내림차순 (-), 두번째 인자를 기준으로 내림차순,.,,
+print(sorted(a))                                    #[(1, 1, 3), (1, 3, 3), (2, 1, 3), (3, 3, 4)]
+print(sorted(a,reverse=True))                       #[(3, 3, 4), (2, 1, 3), (1, 3, 3), (1, 1, 3)]
+print(sorted(a,key=lambda  x:(x[2],x[0],x[1])))

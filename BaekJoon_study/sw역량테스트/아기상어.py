@@ -30,4 +30,13 @@ def biteFisht(x,y,shark_size):
         for i in range(4):
             nx = cur_x+dx[i]
             ny = cur_y+dy[i]
-            if
+            if 0<=nx<n and 0<=ny<n and visited[nx][ny]==0:
+                if graph[nx][ny] <= shark_size:
+                    q.append((nx,ny))
+                    visited[nx][ny] =1
+                    distance[nx][ny]=distance[cur_x][cur_y]+1
+                    if graph[nx][ny] < shark_size and graph
+                        distance[nx][ny]
+
+a = [(2,1,3),(1,3,3),(3,3,4),(1,1,3)]
+print(sorted(a,key=lambda x: (-x[2],-x[0],-x[1])))
