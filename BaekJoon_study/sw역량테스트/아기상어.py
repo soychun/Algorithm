@@ -40,3 +40,4 @@ def biteFisht(x,y,shark_size):
 
 a = [(2,1,3),(1,3,3),(3,3,4),(1,1,3)]
 print(sorted(a,key=lambda x: (-x[2],-x[0],-x[1])))
+# https://resilient-923.tistory.com/357
