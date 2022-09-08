@@ -1,3 +1,6 @@
+# 첫번째, 내가 기출중에 처음으로 성공한 문제. 하지만 솔루션 필요해 보임
+# 백준상으로는 pypy로 해야만 시간 초과가 안되는 이슈가 있었음
+
 import math
 import sys
 input = sys.stdin.readline
