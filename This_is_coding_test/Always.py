@@ -44,3 +44,9 @@ print(sorted(a,key=lambda x: (-x[2],-x[0],-x[1])))   # [(3, 3, 4), (2, 1, 3), (1
 print(sorted(a))                                    #[(1, 1, 3), (1, 3, 3), (2, 1, 3), (3, 3, 4)]
 print(sorted(a,reverse=True))                       #[(3, 3, 4), (2, 1, 3), (1, 3, 3), (1, 1, 3)]
 print(sorted(a,key=lambda  x:(x[2],x[0],x[1])))
+
+
+
+remove_set = {0}
+a =[i for i in a if i not in remove_set]
+# set에 있는 수를 모두 제거하는 방법
