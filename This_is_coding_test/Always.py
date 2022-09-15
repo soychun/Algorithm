@@ -50,3 +50,5 @@ print(sorted(a,key=lambda  x:(x[2],x[0],x[1])))
 remove_set = {0}
 a =[i for i in a if i not in remove_set]
 # set에 있는 수를 모두 제거하는 방법
+
+# zip

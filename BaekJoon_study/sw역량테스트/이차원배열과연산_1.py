@@ -72,3 +72,4 @@ while True:
 
 
         time_stemp +=1
+# https://velog.io/@djagmlrhks3/Algorithm-BaekJoon-17140.-%EC%9D%B4%EC%B0%A8%EC%9B%90-%EB%B0%B0%EC%97%B4%EA%B3%BC-%EC%97%B0%EC%82%B0-by-Python
