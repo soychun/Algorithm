@@ -46,5 +46,6 @@ def bubun():
     if len(s)==0:
         return
     else:
+        
 
 
