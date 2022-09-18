@@ -66,7 +66,16 @@ def move_fish(s_x,s_y):
                 m[x][y][0], m[nx][ny][0] = m[nx][ny][0], m[x][y][0]
                 m[x][y][1], m[nx][ny][1] = m[nx][ny][1], p
                 break
-def dfs(s_x,s_y,eat):
+def food_cheat( x, y):  # 상어가 먹을 수 있는 후보 위치 반환
+    positions = []
+    direction = m[x][y][1]
+    for i in range(1, 4):
+        nx, ny = x + dx[direction], y + dy[direction]
+        if 0 <= nx < 4 and 0 <= ny < 4 and 1 <= m[nx][ny][0] <= 16:
+            positions.append([nx, ny])
+        x, y = nx, ny
+    return positions
+def dfs(s_x,s_y,eat,total):
 
     eat+= m[s_x][s_y][0]
     m[s_x][s_y] = [-1, m[s_x][s_y][1]]  #상어 위치는 티만 내주고 굳이 바꿀 필요는 없다
@@ -75,7 +84,13 @@ def dfs(s_x,s_y,eat):
     move_fish(s_x,s_y)
     print('after move')
     print(m)
+    #
+    result = food_cheat(s_x, s_y)
+    # 해당 먹이 먹는 모든 과정 탐색
+    answer = max(eat, total + m[s_x][s_y][0])
+    for next_x, next_y in result:
+        dfs( next_x, next_y,eat, total + m[s_x][s_y][0])
 
-dfs(0,0,eat)
-print(m)
+dfs(0,0,eat,0)
+print(eat)
 
