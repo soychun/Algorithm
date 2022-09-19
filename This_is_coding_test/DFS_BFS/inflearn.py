@@ -42,10 +42,21 @@ print(s)
 
 print('부분 집합 구하기')
 n = 3
-def bubun():
-    if len(s)==0:
+s = [i+1 for i in range(3)]
+print(s)
+def bubun(x):
+    if x==n:
+        for i in range(n):
+            if ch[i]==1:
+                print(s[i],end=' ')
+        print()
         return
     else:
-        
+        ch[x] = 1
+        bubun(x+1)
+        ch[x] = 0
+        bubun(x+1)
 
+ch = [0]*(n)
+bubun(0)
 
