@@ -4,7 +4,6 @@
 # 스택 자료구조를 활용해야 하는 상당수 알고리즘은 재귀 함수를 이용해 간편하게 구현될 수 있음
 
 
-
 a = 11
 s=[]
 def binary(num):
@@ -132,5 +131,97 @@ print(result)
 
 print('47 중복 순열 구하기')
 n = 3
+n = [i+1 for i in range(n)]
 m =2
-def permutation_of_repetition():
+result=[0]*m
+n_case = 0
+def permutation_of_repetition(L):
+    global n_case
+    if L ==m:
+        n_case+=1
+        print(' '.join(map(str,result)))
+        return
+    else:
+        for i in range(len(n)):
+            result[L] = n[i]
+            permutation_of_repetition(L+1)
+permutation_of_repetition(0)
+print(n_case)
+
+# print('48 동전교환')
+# n = 3
+# bag_coin  =[1,2,5]
+# bag_coin.sort(reverse = True)
+#
+# m = 15
+# result = 0
+# s = []
+# def coin_exchange(L,sum,s):
+#     if sum>15:
+#         return
+#     if sum==15:
+#         print(s)
+#
+#
+#         result
+#
+#
+#     else:
+#
+#         coin_exchange(L+1,sum+,s)
+#
+# max_n = 10000
+# coin_exchange()
+print('49 순열구하기')
+n = 3
+m = 2
+v = [0]*n
+s = []
+sum = 0
+def permutation(L):
+    global sum
+    if L==m:
+        sum +=1
+        print(' '.join(map(str,s)))
+    else:
+        for i in range(n):
+            if v[i]==1:
+                continue
+            else:
+                v[i]=1
+                s.append(i+1)
+                permutation(L+1)
+                v[i]=0
+                s.pop()
+permutation(0)
+print(sum)
+
+print('50 수열 추측하기')
+n = 4
+f = 16
+v = [0]*n
+s=[]
+def pascal(s,n):
+    if len(s)==1:
+        print(s[0])
+    else:
+        a = []
+        for i in range(n-1):
+            a.append(s[i]+s[i+1])
+        pascal(a,n-1)
+# pascal([3,1,2,4],4)
+def guess(L):
+    if L==n:
+        print(' '.join(map(str,s)))
+        pascal(s,n)
+    else:
+        for i in range(n):
+           if v[i]==1:
+               continue
+           else:
+               v[i]=1
+               s.append(i+1)
+               guess(L+1)
+               v[i]=0
+               s.pop()
+guess(0)
