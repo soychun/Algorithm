@@ -60,3 +60,77 @@ def bubun(x):
 ch = [0]*(n)
 bubun(0)
 
+
+print('45합이같은 부분집합')
+n = 6
+s = [1,3,5,6,7,10]
+v = [0]*6
+flag =False
+import sys
+def bubun_45(x):
+    global flag
+    if flag==True:  # 하나 얻어걸리면 거기서 멈춤
+        return
+    if x==n:
+        s_1 = []
+        s_2 = []
+        for i in range(n):
+            if v[i]== 0:
+                s_1.append(s[i])
+            else:
+                s_2.append(s[i])
+        if sum(s_1)==sum(s_2):
+            flag = True
+
+        # print(' '.join(map(str,s_1)),' ',' '.join(map(str,s_2)))
+
+    else:
+        v[x]=1
+        bubun_45(x+1)
+        v[x]=0
+        bubun_45(x+1)
+
+bubun_45(0)
+if flag==True:
+    print('YES')
+else:
+    print('No')
+
+print('46바둑이승차')
+c = 259
+n = 5
+bag = [81,58,42,33,61]
+sum = 0
+
+def ba(x,sum):
+    if x==n:
+        if sum>c :
+            print(sum)
+            return
+
+    else:
+        ba(x+1,sum+bag[x])
+        ba(x+1,sum)
+ba(0,sum)
+sum = 0
+def ba_sol(L,sum):
+    global result
+    if sum>c:
+        # print('over')  # 넘으면 계산 안하고 넘어감 아래꺼를 안한다 뿐이지, 다른 경우의 수 탐색을 종료하겠다는 뜻은 아님.
+        return
+    if L==n:
+        # print(sum)
+        if sum>result:   # sum은 재귀이기 때문에 다 들어가고, 모든 경우를 탐색함에 있어서 result를 갱신해주면서 확인한다.
+            result = sum
+    else:
+        ba_sol(L + 1, sum + bag[L])
+        ba_sol(L+1,sum)  # 순서 상관 없는 듯? 시간을 빨리 하고 싶으면 최댓값이기 때문에 반대로 해누는게 좋읗듯?
+# 부분합 구하기 아직 안풀음
+result = -3399
+ba_sol(0,0)
+print(result)
+
+print('47 중복 순열 구하기')
+n = 3
+m =2
+def permutation_of_repetition():
