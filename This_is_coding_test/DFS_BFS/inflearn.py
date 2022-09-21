@@ -201,19 +201,36 @@ n = 4
 f = 16
 v = [0]*n
 s=[]
+re = 0
+import copy
 def pascal(s,n):
+    s = copy.deepcopy(s)
+    global re
     if len(s)==1:
-        print(s[0])
+        # print(s[0])
+        re = s[0]
     else:
         a = []
         for i in range(n-1):
             a.append(s[i]+s[i+1])
         pascal(a,n-1)
+        return
 # pascal([3,1,2,4],4)
+bag_s = []
 def guess(L):
+    global a
+    global re
+    global bag_s
+    if re ==16:
+        return
     if L==n:
-        print(' '.join(map(str,s)))
+        # print(' '.join(map(str,s)))
         pascal(s,n)
+        if re==16:
+            print(' '.join(map(str,s)))
+            # return
+
+
     else:
         for i in range(n):
            if v[i]==1:
