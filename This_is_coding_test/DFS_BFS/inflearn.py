@@ -2,7 +2,7 @@
 # 컴퓨터의 내부에서 재귀 함수의 수행은 스택 자료구조를 이용한다
 # 가장 마지막에 호출한 함수가 먼저 수행을 끝내야 그 앞의 함수 호출이 종료되기 때문
 # 스택 자료구조를 활용해야 하는 상당수 알고리즘은 재귀 함수를 이용해 간편하게 구현될 수 있음
-
+# https://velog.io/@myway00/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-050-%EC%88%98%EC%97%B4-%EC%B6%94%EC%B8%A1%ED%95%98%EA%B8%B0%EC%88%9C%EC%97%B4-%ED%8C%8C%EC%8A%A4%EC%B9%BC-%EC%9D%91%EC%9A%A9
 
 a = 11
 s=[]
@@ -196,7 +196,7 @@ def permutation(L):
 permutation(0)
 print(sum)
 
-print('50 수열 추측하기')
+print('50 수열 추측하기_솔루션 공부할 것')
 n = 4
 f = 16
 v = [0]*n
@@ -217,7 +217,7 @@ def pascal(s,n):
         return
 # pascal([3,1,2,4],4)
 bag_s = []
-def guess(L):
+def guess(L): #내풀이. 아직 솔루션 해결 안함
     global a
     global re
     global bag_s
@@ -242,3 +242,70 @@ def guess(L):
                v[i]=0
                s.pop()
 guess(0)
+
+print('51 조합 구하기')
+n = 4
+r = 2
+s = []
+result = 0
+def combi(L,B):
+    global result
+    if L==r:
+        result+=1
+        print(' '.join(map(str,s)))
+    else:
+        for i in range(B,n):
+            s.append(i+1)
+            combi(L+1,i+1)
+            s.pop()
+
+combi(0,0)
+print(result)
+
+print('51 조합 구하기(중복?)')
+n = 4
+r = 2
+s = []
+result = 0
+def combi(L,B):
+    global result
+    if L==r:
+        result+=1
+        print(' '.join(map(str,s)))
+    else:
+        for i in range(0,n):
+            s.append(i+1)
+            combi(L+1,i+1)
+            s.pop()
+
+combi(0,0)
+print(result)
+
+print('52 수들의 조합')
+# N개의 정수가 주어지면 그 숫자들 중 K개를 뽑는 조합의 합이 임의의 정수 M의 배수인 개수
+# 는 몇 개가 있는지 출력하는 프로그램을 작성하세요.
+# 예를 들면 5개의 숫자 2 4 5 8 12가 주어지고, 3개를 뽑은 조합의 합이 6의 배수인 조합을
+# 찾으면 4+8+12 2+4+12로 2가지가 있습니다.
+n = 5
+k = 3
+v = [2,4,5,8,12]
+m = 6
+cnt = 0
+s = []
+del sum
+def combi_52(L,B):
+    global m
+    global cnt
+    if L==k:
+        if sum(s)%m ==0:
+            print(s)
+            cnt+=1
+    else:
+        for i in range(B,n):
+            s.append(v[i])
+            combi_52(L+1,i+1)
+            s.pop()
+combi_52(0,0)
+print(cnt)
+
+print('53')
