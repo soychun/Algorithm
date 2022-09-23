@@ -319,8 +319,8 @@ print('53 인접행렬 가중치 방향그래프')
 #     g[x-1][y-1] = c
 # for i in range(n):
 #     print(' '.join(map(str,g[i])))
-'''
-print('54 경로탐색 (DFS 그래프)')
+
+print('54 경로탐색 (DFS 그래프)_한번 더 풀어볼 것')
 # 방향그래프가 주어지면 1번 정점에서 n번 정점으로 가는 모든 경로의 가지 수를 출력하는 프로그램을 작성하세요.
 n = 5
 m = 9
@@ -338,7 +338,7 @@ v = [[0,0,0,0,0,0],
      [0,0,0,0,0,0]]
 s = []
 cnt = 0
-def dfs(c):
+def dfs_54(c):
     global cnt
     if c == 5:
         print('지나온 길 출력')
@@ -352,10 +352,14 @@ def dfs(c):
             if g[c][i]==1 and v[c][i]==0 and v[i][c]==0:
                 v[c]=[1]*(n+1)
                 v[i][c] = 1
-                dfs(i)
+                dfs_54(i)
                 v[c] = [0]*(n+1)
                 v[i][c] = 0
                 s.pop()
 
 dfs(1)
 print('cnt = ',cnt)
+
+'''
+
+print()
