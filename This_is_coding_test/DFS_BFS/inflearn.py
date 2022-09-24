@@ -1,4 +1,4 @@
-'''
+
 # 재귀함수를 이용한 이진수 출력
 # 컴퓨터의 내부에서 재귀 함수의 수행은 스택 자료구조를 이용한다
 # 가장 마지막에 호출한 함수가 먼저 수행을 끝내야 그 앞의 함수 호출이 종료되기 때문
@@ -40,7 +40,7 @@ print(s)
 # 작성해서 문제를 푼다. 백트래킹의 종류로 DFS/BFS가 있으며 모든 경우의 수를 구해야 할 때는 DFS,
 # 최단거리를 구할 때는 BFS를 사용해서 문제를 푼다.
 
-print('부분 집합 구하기')
+print('44. 부분 집합 구하기')
 n = 3
 s = [i+1 for i in range(3)]
 print(s)
@@ -360,6 +360,67 @@ def dfs_54(c):
 dfs(1)
 print('cnt = ',cnt)
 
-'''
 
-print()
+
+print('55 최대점수 구하기 (DFS)')
+n = 5
+m = 20
+g = [(10, 5), (25, 12), (15, 8), (6, 3), (7, 4)]
+t = 0  #시간
+s = 0   # score
+tmp = []
+ch = [0]*(n)
+# print(g[0][1])
+# q,w = g[-1]
+# print(q,w)
+max_s = -11
+def dfs_55():
+    global s
+    global t
+    global max_s
+    if t>=m:
+        # print(tmp)
+        if t>m:
+            tmp_s,tmp_t =tmp[-1]
+            print(s-tmp_s,t-tmp_t)
+            max_s = max(max_s,s-tmp_s)
+        else:
+            print(s,t)
+            max_s = max(max_s, s)
+    else:
+        for i in range(n):
+            if ch[i]==0:
+                ch[i]=1
+                tmp.append(g[i])
+                s+=g[i][0]
+                t+=g[i][1]
+                dfs_55()
+                ch[i]=0
+                s -= g[i][0]
+                t -= g[i][1]
+                tmp.pop()
+dfs_55()
+print(max_s)
+
+
+def DFS_sol(x,s,time) :
+    global res
+    if time>m :
+        return
+    if x==n :
+        if s>res:
+            res=s
+    else : #두가지 경우로 나뉜다. 문제를 푸는 경우와 풀지 않는 경우
+        DFS_sol(x+1, s+pv[x] , time+pt[x])
+        DFS_sol(x+1, s, time)
+if __name__=='__main__' :
+    n, m = map(int, input().split())
+    pv =list()
+    pt=list()
+    for i in range(n) :
+        a,b = map(int, input().split())
+        pv.append(a)
+        pt.append(b)
+    res=-1
+    DFS(0,0,0)
+    print(res)
