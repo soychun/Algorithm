@@ -27,14 +27,14 @@ n = 4
 r = 3
 def do_somthing(s):
     print(s)
-def dfs_notfor(s,L,D):
+def dfs_notfor(s,D):
     if len(s)==r:
         do_somthing(s)
         return
     elif D==n:
         return
     s.append(D+1)
-    dfs_notfor(s,L+1,D+1)
+    dfs_notfor(s,D+1)
     s.pop()
-    dfs_notfor(s,L+1,D+1)
+    dfs_notfor(s,D+1)
 dfs_notfor(s,0,0)

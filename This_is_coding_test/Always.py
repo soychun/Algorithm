@@ -56,3 +56,26 @@ a =[i for i in a if i not in remove_set]
 
 # 순열은 ch[]가 필요하고, 조합은 ch[]가 필요 없지만 BeginWith변수가 꼭 필요하다
 # 부분집합의 경우에는 상태트리를 만들어서 선택하는 경우와 선택하지 않는 경우가 필요한 것 같다
+
+
+# 조합 _ 삼성용
+from collections import deque
+s = deque()
+n = 4
+r = 3
+def do_somthing(s):
+    print(s)
+def dfs_notfor(s,L,D):
+    if len(s)==r:
+        do_somthing(s)
+        return
+    elif D==n:
+        return
+    s.append(D+1)
+    dfs_notfor(s,L+1,D+1)
+    s.pop()
+    dfs_notfor(s,L+1,D+1)
+dfs_notfor(s,0,0)
+
+
+# 최댓값은 엄청나게 작게, 최솟값은 엄청나게 크게 하는 방법을 항상 생각하자
