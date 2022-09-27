@@ -79,3 +79,7 @@ dfs_notfor(s,0,0)
 
 
 # 최댓값은 엄청나게 작게, 최솟값은 엄청나게 크게 하는 방법을 항상 생각하자
+
+
+a - b 를 구현한 코드입니다.
+a_sub_b = [x for x in a if x not in b]
