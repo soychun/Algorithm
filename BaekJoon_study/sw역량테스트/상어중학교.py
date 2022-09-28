@@ -88,12 +88,12 @@ while True:
                 rainbow_list = []
                 dfs(i,j,g[i][j],tmp_g,rainbow_list)
                 # g_list.append([[i, j], list(map(list, set(map(tuple, tmp_g))))])
-                g_list.append([[i,j],tmp_g])
+                g_list.append([[i,j],tmp_g,len(rainbow_list)])
                 # list(map(list, set(map(tuple, a))))
                 for r in rainbow_list:
                     visited[r[0]][r[1]] = 0
 
-    g_list = sorted(g_list, key=lambda x:(-len(x[1]),-x[0][0],-x[0][1]))     # 가장 큰 블록 찾기
+    g_list = sorted(g_list, key=lambda x:(-len(x[1]),-x[2],-x[0][0],-x[0][1]))     # 가장 큰 블록 찾기
     if len(g_list[0][1])==1:
         break
     print(g_list)
