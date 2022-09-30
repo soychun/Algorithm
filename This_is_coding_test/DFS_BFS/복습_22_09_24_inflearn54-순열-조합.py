@@ -43,8 +43,8 @@ print(cnt)
 
 
 # inflearn 54 순열 구하기
-n = 3
-m = 2
+n = 4
+m = 3
 s = []
 ch = [0]*(n)
 cnt = 0
