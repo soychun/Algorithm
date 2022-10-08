@@ -1,3 +1,4 @@
+'''
 다이나믹 프로그래밍을 활용한 대표적인 최단 경로 탐색 알고리즘
 특정한 하나의 정점에서 다른 모든 정점으로 가는 최단 경로
 
@@ -14,5 +15,36 @@
 4. 해당 노드를 거쳐서 특정한 노드로 가능 경우를 고려하여 최소 비용을 갱신
 
 그래프는, 실제로 컴퓨터 내에서 처리할 때 이차원 배열의 형태로 처리해야 한다
+'''
+inf = int(1e9)
 
-g = [[0,2,5,1,inf,]]
+n,m = map(int, input().split())
+start = int(input())
+g = [[] for i in range(n+1)]
+visited = [False]*(n+1)
+distance = [inf]*(n+1)
+
+for _ in range(m):
+    a,b,c = map(int, input().split())
+    g[a].append([b,c])
+
+def print_g(g):
+    for i in range(len(g)):
+        print(g[i])
+
+# 6 11
+# 1
+# 1 2 2
+# 1 3 5
+# 1 4 1
+# 2 3 3
+# 2 4 2
+# 3 2 3
+# 3 6 5
+# 4 3 3
+# 4 5 1
+# 5 3 1
+# 5 6 2
+print_g(g)
+print(visited)
+print(distance)
