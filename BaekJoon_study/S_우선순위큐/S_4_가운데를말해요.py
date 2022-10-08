@@ -7,4 +7,6 @@ leftq = []
 rightq = []
 for _ in range(n):
     x = int(input())
-    
+    if len(leftq) == len(rightq):
+        heapq.heappush()
+
