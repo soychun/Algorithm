@@ -10,20 +10,21 @@ start = int(input())
 for _ in range(e):
     u,v,w = map(int,input().split())
     g[u].append((v,w))
-
 def dijkstra(start):
     q = []
     heapq.heappush(q,(0,start))
     distance[start] = 0
     while q:
-        dist, nowv = heapq.heappop(q)
-        if dist > distance[nowv]:
+        dist,now = heapq.heappop(q)
+        if dist > distance[now]:
             continue
-        for i in g[nowv]:
+        for i in g[now]:
             cost = dist+i[1]
-            if cost < distance[i[0]]:
+            if distance[i[0]]>cost:
                 distance[i[0]] = cost
                 heapq.heappush(q,(cost,i[0]))
+
+
 dijkstra(start)
 for i in range(1,len(distance)):
     if distance[i]==inf:
