@@ -83,3 +83,14 @@ dfs_notfor(s,0,0)
 
 a - b 를 구현한 코드입니다.
 a_sub_b = [x for x in a if x not in b]
+
+
+f-string
+answer = 7
+print(f"정답은 {answer}입니다")
+
+람다표현식
+print((lambda a,b:a+b)(3,7))
+
+map함수
+map(function, iterable)  iterable이라는 뜻은 반복 가능한 자료형인 리스트나 튜플

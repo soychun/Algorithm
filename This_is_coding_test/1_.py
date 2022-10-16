@@ -1,4 +1,6 @@
-기간 복잡도와 공간 복잡도
+(이코테 2021 강의 몰아보기) 1. 코딩 테스트 출제 경향 분석 및 파이썬 문법 부수기
+
+시간 복잡도와 공간 복잡도
 표기법 : 빅 O 표기법  (가장 빠르게 증가하는 항만을 고려 / 함수의 상한만을 나타냄)
 
 모든 데이터를 한번씩 확인한다 : O(N)
@@ -93,4 +95,60 @@ a ='abcd'
 합집합, 교집합, 차집합 가능  (& |, -)
 하나추가, 여러개 추가, 특정 값 삭제는 data.add(4), data.update([5,6]), data.remove(3)
 
+<기본입출력>===================================================================
+sys.stdin.readline()을 이용하지만 입력 후 엔터가 줄 바꿈 기호로 입력되므로 rstrip()메서드 함께 사용
 
+<조건부 표현식>===================================================================
+score = 85
+result = "success" if score>80 else 'Fail'
+print(result)
+
+
+pass : if else 조건문에서 아무것도 안쓰고 넘어가고 싶을 때
+continue : 반복문에서 남은 코드의 실행을 건너뛰고 다음 반복을 진행하고자 할 때
+
+<람다표현식>===================================================================
+함수를 간단하게 작성 가능하다
+print(labda a,b : a+b)
+
+list1 = [1,2,3,4,5]
+list2 = [6,7,8,9,10]
+result = list(map(lambda a,b:a+b,list1,list2))
+print(result)
+https://blockdmask.tistory.com/m/520
+
+<내장함수>===================================================================
+sum()
+min(), max()
+eval()  #eval("1+3*4")
+sorted(list, reverse = Ture)
+sorted(list, key = lambda x:(x[1],x[0]))
+
+<순열과조합>===================================================================
+from itertools import permutations
+data = [1,2,3]
+result = list(permutations(data,2))
+print(result)
+                                [(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)]
+
+from itertools import combinations
+data = [1,2,3]
+result = list(combinations(data,2))
+print(result)
+
+                                [(1, 2), (1, 3), (2, 3)]
+
+from itertools import product
+data = [1,2,3]
+result = list(product(data,repeat = 2))
+print(result)
+                                [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)]
+
+from itertools import combinations_with_replacement
+data = [1,2,3]
+result = list(combinations_with_replacement(data,2))
+print(result)
+                                [(1, 1), (1, 2), (1, 3), (2, 2), (2, 3), (3, 3)]
+
+<counter>===================================================================
+<최대공약수와 최대 공배수>===================================================================
