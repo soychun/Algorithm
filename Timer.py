@@ -12,7 +12,7 @@ hour = int(0)
 sec_total = int(0)
 
 
-limit = 240
+limit = 120
 
 try:
   print('start')
