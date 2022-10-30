@@ -8,3 +8,11 @@ WHERE 칼럼 LIKE '쓰고싶은 문장'
 
 JOIN 문법
 https://yoo-hyeok.tistory.com/98
+
+
+https://school.programmers.co.kr/learn/courses/30/lessons/131120
+-- 코드를 입력하세요
+SELECT P.MEMBER_ID, P.MEMBER_NAME, P.GENDER, DATE_FORMAT(P.DATE_OF_BIRTH,'%Y-%m-%d') AS DATA_OF_BIRTH
+FROM MEMBER_PROFILE AS P
+WHERE P.DATE_OF_BIRTH LIKE '%-03-%' AND P.GENDER LIKE 'W' AND P.TLNO IS NOT NULL
+ORDER BY P.MEMBER_ID ASC
