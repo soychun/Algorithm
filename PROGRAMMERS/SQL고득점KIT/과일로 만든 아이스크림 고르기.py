@@ -36,3 +36,20 @@ https://velog.io/@juwon9733/SQL-%EA%B3%A0%EB%93%9D%EC%A0%90-Kit-SELECT-%EC%98%A4
 
 DISTINCT
 https://school.programmers.co.kr/learn/courses/30/lessons/59408
+
+
+NOT NULL 복습할 것
+https://school.programmers.co.kr/questions/34610
+
+입양시각구하기(1)
+모든 답변 사례 분석해서 내 것으로 만들 것
+https://school.programmers.co.kr/learn/courses/30/lessons/59412
+
+입양시각구하기(2)
+문제 아예 못풀었음
+https://school.programmers.co.kr/learn/courses/30/lessons/59413
+
+IFNULL
+NULL일 경우 ifnull(expr1,expr2);
+만약에 expr1이 null이라면, expr2를 리턴합니다. 그렇지 않다면, expr1을 리턴합니다
+SELECT WAREHOUSE_ID,	WAREHOUSE_NAME,	ADDRESS	,	IFNULL(FREEZER_YN,'N')
