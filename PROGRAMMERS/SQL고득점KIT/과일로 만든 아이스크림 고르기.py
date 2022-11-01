@@ -46,10 +46,16 @@ https://school.programmers.co.kr/questions/34610
 https://school.programmers.co.kr/learn/courses/30/lessons/59412
 
 입양시각구하기(2)
-문제 아예 못풀었음
+문제 아예 못풀었음 (못푼 이유 : 0~7시부터는 새로 만들어 줘야 함)
 https://school.programmers.co.kr/learn/courses/30/lessons/59413
 
 IFNULL
 NULL일 경우 ifnull(expr1,expr2);
 만약에 expr1이 null이라면, expr2를 리턴합니다. 그렇지 않다면, expr1을 리턴합니다
 SELECT WAREHOUSE_ID,	WAREHOUSE_NAME,	ADDRESS	,	IFNULL(FREEZER_YN,'N')
+
+
+식품분류별 가장 비싼 식품의 정보 조회하기
+가장 비싼 식품의 가격은 조회 가능하나, 그 특정 식품의 상품명은 가져오지 못한다
+
+https://school.programmers.co.kr/learn/courses/30/lessons/131116
