@@ -5,10 +5,9 @@
 arr = [7,5,9,0,3,1,6,2,4,8]
 
 # 삽입 방식은? 한칸한칸 비교하며 스와프
-# print(3)
-# print(2)
+
 for i in range(1,len(arr)):
-    for j in range(i,0,-1):  #i-1,-1로 처음에 했는데, 다른 이유 찾아보자
+    for j in range(i,0,-1):  # i-1,-1로 처음에 했는데, 아래처럼 식 전개하려면 이 방법이 최상.
         # print(i,'   ',j)
         if arr[j]<arr[j-1]:
             arr[j],arr[j-1] = arr[j-1],arr[j]
@@ -16,3 +15,4 @@ for i in range(1,len(arr)):
             break
 
 print(arr)
+
