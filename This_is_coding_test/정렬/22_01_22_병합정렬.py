@@ -7,7 +7,7 @@ def merge_sort(arr):
     mid = len(arr)//2   #반을 나눠서 중간을 자른다
     l_arr = merge_sort(arr[:mid])
     r_arr = merge_sort(arr[mid:])
-    print('div',l_arr+r_arr)
+    # print('div',l_arr+r_arr)
     merged_arr = []
     l=r = 0
     while l<len(l_arr) and r<len(r_arr):
@@ -19,9 +19,9 @@ def merge_sort(arr):
             r+=1
     # print('before',merged_arr)
     merged_arr +=l_arr[l:]   #나머지를 정렬하지도 않고 붙일 수 있는 이유는 앞에서 이미 정렬했기 때문이다.
-    merged_arr +=r_arr[r:]    # l이 먼저든 r이 먼저든 상관 없다. 
+    merged_arr +=r_arr[r:]    # l이 먼저든 r이 먼저든 상관 없다. 무조건 한쪽만 남기 때문에
     print(merged_arr)
     return merged_arr
-
+print('before : ',arr)
 arr = merge_sort(arr)
-print(arr)
+print('after : ',arr)
